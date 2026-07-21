@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Information - Sana.pk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <a href="Index.html" class="logo">Sana.pk</a>
+                    <div class="nav-links">
+                        <a href="Index.html">Home</a>
+                        <a href="Index.html#products">Products</a>
+                        <a href="Index.html#contact">Contact</a>
+                        <a href="#" onclick="openAdmin()">Admin</a>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cart-icon" onclick="openCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </div>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="Index.html" onclick="toggleMenu()">Home</a>
+                <a href="Index.html#products" onclick="toggleMenu()">Products</a>
+                <a href="Index.html#contact" onclick="toggleMenu()">Contact</a>
+                <a href="#" onclick="toggleMenu(); openAdmin()">Admin</a>
+                <div class="mobile-search">
+                    <input type="text" id="mobileSearchInput" placeholder="Search products..." onkeyup="searchProducts()">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Shipping Hero Banner -->
+        <section class="shipping-hero">
+            <div class="shipping-hero-overlay"></div>
+            <div class="shipping-hero-content">
+                <h1>Shipping Information</h1>
+                <p>Everything you need to know about delivery, costs, and tracking your order</p>
+            </div>
+        </section>
+
+        <!-- Delivery Timeframes -->
+        <section class="shipping-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Delivery Timeframes</h2>
+                    <p>Estimated delivery times based on your location</p>
+                </div>
+                <div class="shipping-grid">
+                    <div class="shipping-card">
+                        <div class="shipping-card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3>Major Cities</h3>
+                        <p class="shipping-time">1 - 2 Business Days</p>
+                        <p>Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, and all provincial capitals receive fastest delivery.</p>
+                    </div>
+                    <div class="shipping-card">
+                        <div class="shipping-card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Urban Areas</h3>
+                        <p class="shipping-time">2 - 4 Business Days</p>
+                        <p>All district headquarters and major towns across Punjab, Sindh, KPK, and Balochistan.</p>
+                    </div>
+                    <div class="shipping-card">
+                        <div class="shipping-card-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Remote & Northern Areas</h3>
+                        <p class="shipping-time">4 - 7 Business Days</p>
+                        <p>Gilgit, Skardu, Hunza, Chitral, and other remote locations may require additional transit time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shipping Costs -->
+        <section class="shipping-section shipping-alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Shipping Costs</h2>
+                    <p>Transparent pricing with no hidden fees</p>
+                </div>
+                <div class="shipping-costs-table-wrapper">
+                    <table class="shipping-costs-table">
+                        <thead>
+                            <tr>
+                                <th>Order Value</th>
+                                <th>Standard Shipping</th>
+                                <th>Express Shipping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Below PKR 2,000</td>
+                                <td>PKR 150</td>
+                                <td>PKR 350</td>
+                            </tr>
+                            <tr>
+                                <td>PKR 2,000 - PKR 4,999</td>
+                                <td>PKR 99</td>
+                                <td>PKR 250</td>
+                            </tr>
+                            <tr>
+                                <td>PKR 5,000 - PKR 9,999</td>
+                                <td><span class="free-shipping">FREE</span></td>
+                                <td>PKR 150</td>
+                            </tr>
+                            <tr>
+                                <td>PKR 10,000 & Above</td>
+                                <td><span class="free-shipping">FREE</span></td>
+                                <td><span class="free-shipping">FREE</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="shipping-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Express shipping is available for orders placed before 2:00 PM on business days. All prices include GST.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Processing -->
+        <section class="shipping-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Order Processing</h2>
+                    <p>How we prepare and dispatch your orders</p>
+                </div>
+                <div class="shipping-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h3>Order Confirmation</h3>
+                            <p>You'll receive an order confirmation email and WhatsApp message immediately after placing your order.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h3>Order Processing</h3>
+                            <p>Our team verifies your order, checks product availability, and prepares your items. This takes 12-24 hours.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h3>Quality Check & Packing</h3>
+                            <p>Each product undergoes a quality inspection before being carefully packed with protective materials.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h3>Dispatch & Tracking</h3>
+                            <p>Your order is handed over to our courier partner. You'll receive a tracking ID via SMS and email.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h3>Delivery</h3>
+                            <p>Our courier partner delivers your package to your doorstep. A confirmation call may be made before delivery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shipping-note">
+                    <i class="fas fa-clock"></i>
+                    <p>Orders placed after 3:00 PM or on public holidays will be processed the next business day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracking Your Order -->
+        <section class="shipping-section shipping-alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tracking Your Order</h2>
+                    <p>Stay updated on your package's journey</p>
+                </div>
+                <div class="tracking-methods">
+                    <div class="tracking-method">
+                        <i class="fas fa-sms"></i>
+                        <h3>SMS Updates</h3>
+                        <p>Receive real-time SMS alerts at each stage of delivery — from dispatch to doorstep.</p>
+                    </div>
+                    <div class="tracking-method">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Notifications</h3>
+                        <p>Get detailed email updates with tracking links and estimated delivery windows.</p>
+                    </div>
+                    <div class="tracking-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp Alerts</h3>
+                        <p>Opt-in for WhatsApp notifications for instant delivery status updates.</p>
+                    </div>
+                    <div class="tracking-method">
+                        <i class="fas fa-headset"></i>
+                        <h3>Customer Support</h3>
+                        <p>Contact us anytime at <strong>03449254538</strong> or <strong>sanapk9876@gmail.com</strong> for tracking assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shipping Locations -->
+        <section class="shipping-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Shipping Locations</h2>
+                    <p>Where we deliver</p>
+                </div>
+                <div class="locations-content">
+                    <div class="location-card featured">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>All Over Pakistan</h3>
+                        <p>We deliver to every city, town, and village across Pakistan. Our courier network covers all provinces including Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan, Gilgit-Baltistan, and Azad Jammu & Kashmir.</p>
+                        <ul class="location-list">
+                            <li><i class="fas fa-check-circle"></i> Free shipping on orders above PKR 5,000</li>
+                            <li><i class="fas fa-check-circle"></i> Cash on Delivery available nationwide</li>
+                            <li><i class="fas fa-check-circle"></i> Tracked delivery for all orders</li>
+                        </ul>
+                    </div>
+                    <div class="location-card">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3>International Shipping</h3>
+                        <p>Currently, we primarily serve customers within Pakistan. For international shipping inquiries, please contact us directly and we'll assess feasibility for your location.</p>
+                        <a href="Index.html#contact" class="location-cta">Contact Us <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Returns & Refunds -->
+        <section class="shipping-section shipping-alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Returns & Refunds</h2>
+                    <p>Hassle-free return policy for your peace of mind</p>
+                </div>
+                <div class="returns-grid">
+                    <div class="returns-card">
+                        <i class="fas fa-undo-alt"></i>
+                        <h3>7-Day Returns</h3>
+                        <p>You can return most products within 7 days of delivery if damaged, defective, or not as described.</p>
+                    </div>
+                    <div class="returns-card">
+                        <i class="fas fa-rupee-sign"></i>
+                        <h3>Full Refund</h3>
+                        <p>Get a full refund (including shipping charges) for returned items that pass our quality check.</p>
+                    </div>
+                    <div class="returns-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>Easy Replacement</h3>
+                        <p>We offer free replacement for damaged or defective items — no questions asked.</p>
+                    </div>
+                    <div class="returns-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Quick Support</h3>
+                        <p>Our team processes return requests within 24 hours. Call or WhatsApp us at <strong>03449254538</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="shipping-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Common questions about shipping</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you offer Cash on Delivery (COD)?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer Cash on Delivery (COD) across all cities in Pakistan. You can pay in cash when your order arrives at your doorstep. No advance payment is required for COD orders.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How can I track my order?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once your order is dispatched, you'll receive a tracking ID via SMS and email. You can use this ID on our courier partner's website to track your package in real-time. You can also contact us for tracking updates.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What if my order arrives damaged?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If your order arrives damaged or defective, please contact us within 24 hours of delivery. We'll arrange a free replacement or full refund. Please keep the damaged item and packaging for inspection if requested.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can I change my shipping address after placing an order?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can request an address change within 2 hours of placing your order. After that, the order may already be in processing. Contact us immediately at 03449254538 and we'll do our best to accommodate the change.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you ship on weekends and public holidays?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our courier partners operate Monday through Saturday. Orders placed on Friday after 3:00 PM, Saturday after 2:00 PM, or on public holidays will be processed the next business day. Delivery may be delayed on public holidays.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept Cash on Delivery (COD), Bank Transfer, Easypaisa, and JazzCash. For COD, payment is collected at the time of delivery. For bank transfers and mobile wallets, payment is confirmed before dispatch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="shipping-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Still Have Questions?</h2>
+                    <p>Our customer support team is here to help you with any shipping-related queries.</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/923449254538" class="cta-btn cta-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Us
+                        </a>
+                        <a href="Index.html#contact" class="cta-btn cta-contact">
+                            <i class="fas fa-envelope"></i> Contact Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Sana.pk</h3>
+                        <p>Your trusted dropshipping partner. Quality products, fast delivery, and excellent customer service.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <a href="Index.html">Home</a>
+                        <a href="Index.html#products">Products</a>
+                        <a href="Index.html#contact">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Customer Service</h4>
+                        <a href="ShippingInfo.html">Shipping Info</a>
+                        <a href="retun.html">Returns Policy</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-phone"></i> 03449254538</p>
+                        <p><i class="fas fa-envelope"></i> sanapk9876@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Sana.pk. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isOpen = item.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Toggle clicked item
+            if (!isOpen) {
+                item.classList.add('active');
+            }
+        }
+
+        // Cart functionality
+        function openCart() {
+            showToast('View your cart from the main store page', 'info');
+        }
+
+        // Update cart badge from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedCart = JSON.parse(localStorage.getItem('sanaCart')) || [];
+            const badge = document.getElementById('cartBadge');
+            const count = savedCart.reduce((sum, item) => sum + item.quantity, 0);
+            badge.textContent = count;
+        });
+    </script>
+</body>
+</html>
